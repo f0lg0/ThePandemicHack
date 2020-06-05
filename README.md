@@ -1,7 +1,7 @@
 # The Pandemic Hack
-<div style="text-align:center"><img src="./documentation/header.png"/></div>
+<div style="text-align:center;"><img src="./documentation/header.png"/></div>
 
-<p style="text-align:center">This is a small project where I wanted to apply my newly learned knowledge on DataStructures and Javascript. <br>The goal is to underline the importance of social distancing during a pandemic. </p> 
+<p style="text-align:center;">This is a small project where I wanted to apply my newly learned knowledge on DataStructures and Javascript. <br>The goal is to underline the importance of social distancing during a pandemic. </p> 
 
 <hr style=" border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
 
