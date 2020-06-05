@@ -97,6 +97,8 @@ Note that the visualization on the landing page is pretty simple. Nothing really
 
 ### Notes
 
+The landing page is <b>optimized for "half window" reading</b>.
+
 Virus icons made by https://www.flaticon.com/authors/freepik from https://www.flaticon.com/, full repo icon by me.
 
 Code for graph visualization taken from https://bl.ocks.org/mbostock/2675ff61ea5e063ede2b5d63c08020c7 and adapted to my project by me.
