@@ -1,5 +1,6 @@
 const fs = require('fs');
 const readline = require('readline');
+const json2csv = require('json2csv');
 
 let WeightedGraph = require('./weightedGraph.js');
 let dijkstra = require('./dijkstra.js');
@@ -76,8 +77,32 @@ fs.writeFile("../data/social-net.json", data, 'utf8', function(err) {
 */
 
 let path = dijkstra(graph, population[0], population[population.length - 1]);
-
 console.log(`Final path ${path.finalPath}, days passed ${path.totalDistance}`);
+
+async function saveResultsToCSV(fileName, fields, data) {
+    let rows;
+
+    if (!fs.existsSync(fileName)) {
+        rows = json2csv.parse(data, { header: true });
+    } else {
+        rows = json2csv.parse(data, { header: false });
+    }
+
+    fs.appendFileSync(fileName, rows);
+    fs.appendFileSync(fileName, '\n');
+
+    console.log("Simulation results saved to file.");
+
+}
+
+let fields = ['finalPath', 'totalDistance'];
+let result = {
+    finalPath: path.finalPath,
+    totalDistance: path.totalDistance
+};
+
+saveResultsToCSV("../data/result.csv", fields, result);
+
 
 // asking for data conversion
 const rl = readline.createInterface({
