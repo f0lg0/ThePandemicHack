@@ -5,7 +5,7 @@
 
 <hr style=" border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
 
-This is the first half of the project, the second half consists in calculating the probability of getting a virus; it is <b>coming soon</b>.
+This is the first half of the project, the second half consists in calculating the probability of getting infected during a pandemic; it is <b>coming soon</b>.
 
 ## Requirements
 
