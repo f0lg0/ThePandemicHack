@@ -32,7 +32,7 @@ it should be enough doing:
 ```
 npm install
 ```
-to install everything you need, in case of neeed try to install Express:
+to install everything you need, in case of need try to install Express manually:
 
 ```
 npm install express
@@ -71,7 +71,7 @@ max_conn_number = 1;
 ```
 
 If you want to add more random connections for each node.  
-Note that the values is 1 by default but it doesn't mean that every node has only one connection!
+Note that the value is 1 by default but it doesn't mean that every node has only one connection!
 
 Change the range in:
 
@@ -92,8 +92,8 @@ It will run the simulation involving creating an undirected graph and traversing
 
 The code will generate a file called "social-net.json" and eventually "[PLOT]social-net.json" if you decide to run the convert_data function when prompted to do so, which re-organizes your newly created JSON network for plotting. The plot.js file works with this kind of format.
 
-These files represent the network of individuals with thei respective edges. The "PLOT" is just the more polished data set for plotting.  
-Note that the visualization on the landing page is pretty simple. Nothing really fancy going on there.
+These files represent the network of individuals with their respective edges. The "PLOT" is just a more polished data set for plotting.  
+Note that the visualization on the landing page is pretty simple. Nothing really fancy going on there. I'm very new to web development!
 
 ### Notes
 
