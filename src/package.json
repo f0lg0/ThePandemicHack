@@ -1,0 +1,15 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "Social distancing visualized with an undirected graph and Dijkstra Algorithm",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Leonardo Folgoni",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

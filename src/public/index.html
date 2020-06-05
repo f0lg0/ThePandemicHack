@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ThePandemicHack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .links line {
+            stroke: #aaa;
+        }
+        
+        .nodes circle {
+            pointer-events: all;
+            stroke: none;
+            stroke-width: 40px;
+            fill: black;
+        }
+    </style>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+
+    <div class="banner">
+        <h1>Social distancing</h1>
+        <h2>visualized with an undirected graph and <br>Dijkstra Algorithm</h2>
+    </div>
+
+    <svg style="display: block; margin: auto;" width="960" height="600"></svg>
+
+    <script src="plot.js"></script>
+
+    <h3>
+        This project is a virus spreading simulation, based on the crossover test between Science and ICT.<br>I've thought of it as an extension of the test questions.
+    </h3>
+
+    <p>
+        It consits of visualizing a population of susceptible individuals using an undirected graph. In the example above the individuals are represented with the alphabet letters and every individual is a <b>node</b>, where the starting node "A" is the
+        patient zero and "Z" is the "target". There is a target because the simulation is based on the Dijkstra Algorithm: every node has at least an edge (or link, connection) with another node and this connection has a value ranging from 1 to 5. Value
+        of 1 represents the strongest connection, where an individual has strong, periodic, contacts with the other individual. Value of 5 is the lowest value, the individual has a very weak connection, which can be seen as an occasional contact with
+        the other node. Dijkstra Algorithm is a <b>virus spreading</b> between those individuals. It's an algorithm to find the shortest path between two nodes. Starting from "A" the virus tries to reach "Z" using the shortest path possible. This means
+        that the virus is more prone to follow paths (connections) with the smallest value, or the strongest contact in real life. The connection value also represents the ETA of the process: every unit is a day.
+    </p>
+
+    <p id="lastquote">
+        This is meant to underline the importance of <b>social distancing</b> to slow down the epidemic. Stay safe!
+    </p>
+
+    <h2 style="font-size: 30px;">Walkthrough</h2>
+    <p>The project is structured as follows:</p>
+
+
+    <p>
+        The "core" folder contains the most important files: the two data structures implementations in JavaScript, the Dijkstra Algorithm, the main file where everything is executed and the convert_data file; this is just a utility function that converts the
+        generated JSON data in a more polished format used for plotting. This is due to the fact that I've implemented the weighted graph in a way that looked to me more intuitive and more easy to manipulate. You can see the differences between "social-net.json"
+        and "[PLOT]social-net.json".
+    </p>
+
+    <p>
+        The "data" folder is where the final product, the net of individuals, is stored in a JSON format.
+    </p>
+
+    <p>
+        The "public" folder cointains the files accessible to everybody that wants to visit the NodeJS server, place there the files that you want to be served to clients.
+    </p>
+
+    <p>
+        Finally the server.js file. This is a super simple Express web server. I could have just started a simple HTTP server with Python but I wanted to test my newly learned abilities in backend web development.
+    </p>
+
+    <h2 style="font-size: 30px;">Running your own simulation</h2>
+    <p>As you may have noticed I've already run a simple simulation using the alphabet as population. The graph plotted above is the actual result. Unfortunately I'm still working on a visualization of the spreading process with Dijkstra. What you are seeing
+        it's just the JSON data of the population. In the meanwhile here the result I got by running the simulation:
+    </p>
+
+    <img src="sample.png">
+
+    <p>
+        As you can see, even if it's not possible to view the full object, the Dijkstra Algorithm found the shortest path from A to Z (check http://localhost:8080/[PLOT]social-net.json). The sum of the paths is the ETA of the virus spreading. It took 25 days
+        to infect all nodes that you see at the bottom. The connections are randomly generated and the starting node can't be directly connected with the last one. You can modify the value of the maximum connections for each node. More connections means
+        a higher possibility that the shortest path will be really short. If you actually modify the range of values for the connections, say from 4 to 5 instead of 1 to 5, you will see that it will take the "virus" a longer time for reaching the target.
+    </p>
+
+    <h2 style="font-size: 30px;">Coming Soon</h2>
+
+    <p>
+        This is just the first half of the project. I am planning on making another simulation, this time involving the S.I.R. and the probability of being infected by an individual with the disease. There won't be the Dijkstra Algorithm, just pure formulas!
+        In the documentation folder you will find the article I'm following. Stay tuned!.
+    </p>
+
+    <h3>Leonardo Folgoni</h3>
+
+
+</html>
