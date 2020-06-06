@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ETA Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+
+    <canvas style="margin: auto;" id="chart" width="800" height="800"></canvas>
+    <script>
+        plot();
+
+        async function getData() {
+            const xlabels = []; // simulation number
+            const ylabels = []; // simulation eta
+
+            const respone = await fetch('results.csv');
+            const data = await respone.text()
+
+            const rows = data.split('\n').slice(1);
+
+            let parsedETA, simNum = 0;
+            rows.forEach(elt => {
+                let row = elt.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g); // this is due to the fact that my data in results.csv consinst in an array separeted by commas
+                row = row || [];
+
+                xlabels.push(simNum);
+                simNum++;
+
+                parsedETA = row[row.length - 1];
+                ylabels.push(parsedETA);
+
+            });
+
+            return {
+                xlabels,
+                ylabels
+            };
+        }
+
+        async function plot() {
+            const data = await getData();
+            let ctx = document.getElementById('chart').getContext('2d');
+            let chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.xlabels,
+                    datasets: [{
+                        label: 'Disease ETA',
+                        data: data.ylabels,
+
+                        fill: false,
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+
+                options: {
+                    responsive: false,
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
