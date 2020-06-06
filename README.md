@@ -99,7 +99,7 @@ The code will generate a file called "social-net.json" and eventually "[PLOT]soc
 These files represent the network of individuals with their respective edges. The "PLOT" is just a more polished data set for plotting.  
 Note that the visualization on the landing page is pretty simple. Nothing really fancy going on there. I'm very new to web development!
 
-The simulation also generates a result.csv file where you will find all the results from all the simulations you run, it consits of the shortes path and the total distance.. It may be useful to you!
+The simulation also generates a result.csv file where you will find all the results from all the simulations you run, it consits of the shortes path and the total distance.. It is plotted at http://localhost/results using chart.js!
 
 ### Notes
 

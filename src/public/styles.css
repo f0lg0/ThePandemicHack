@@ -48,6 +48,17 @@ img {
     height: 150px;
 }
 
+.links {
+    text-align: center;
+    color: #777;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
 
 /* ID STYLES */
 
