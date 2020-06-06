@@ -12,6 +12,7 @@ This is the first half of the project, the second half consists in calculating t
 * NodeJS
 * npm (node package manager)
 * Express
+* json2csv
 
 ## Run
 
@@ -32,10 +33,13 @@ it should be enough doing:
 ```
 npm install
 ```
-to install everything you need, in case of need try to install Express manually:
+to install everything you need, in case of need try to manually install these packages:
 
 ```
 npm install express
+```
+```
+npm install json2csv
 ```
 
 The package.json should be already present in the "src" folder.
