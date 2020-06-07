@@ -4,9 +4,6 @@
 <p align="center">This is a small project where I wanted to apply my newly learned knowledge on DataStructures and Javascript. <br>The goal is to underline the importance of social distancing during a pandemic. </p> 
 
 <hr style=" border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
-
-This is the first half of the project, the second half consists in calculating the probability of getting infected during a pandemic; it is <b>coming soon</b>.
-
 ## Requirements
 
 * NodeJS
@@ -46,7 +43,7 @@ The package.json should be already present in the "src" folder.
 
 #### Run the project
 
-I reccomend you to start the server which is needed only if you want to land on the home page of the project with an explaination:
+I recommend you to start the server which is needed only if you want to land on the home page of the project with an explanation:
 
 ```
 node server.js
