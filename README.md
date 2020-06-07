@@ -4,7 +4,9 @@
 <p align="center">This is a small project where I wanted to apply my newly learned knowledge on DataStructures and Javascript. <br>The goal is to underline the importance of social distancing during a pandemic. </p> 
 
 <hr style=" border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+
 ## Requirements
+
 
 * NodeJS
 * npm (node package manager)
