@@ -66,3 +66,21 @@ img {
     padding-top: 0%;
     text-align: center;
 }
+
+
+/* MILLIGRAM STYLES */
+
+.button-black {
+    background-color: black;
+    border-color: black;
+}
+
+.button-black.button-clear,
+.button-black.button-outline {
+    background-color: transparent;
+    color: black;
+}
+
+.button-black.button-clear {
+    border-color: transparent;
+}

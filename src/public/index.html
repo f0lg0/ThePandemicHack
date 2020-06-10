@@ -1,3 +1,5 @@
+<!-- PRODUCTION CODE -->
+
 <!DOCTYPE html>
 <html>
 
@@ -40,11 +42,11 @@
     </h3>
 
     <p>
-        It consits of visualizing a population of susceptible individuals using an undirected graph. In the example above the individuals are represented with the alphabet letters and every individual is a <b>node</b>, where the starting node "A" is the
-        patient zero and "Z" is the "target". There is a target because the simulation is based on the Dijkstra Algorithm: every node has at least an edge (or link, connection) with another node and this connection has a value ranging from 1 to 5. Value
-        of 1 represents the strongest connection, where an individual has strong, periodic, contacts with the other individual. Value of 5 is the lowest value, the individual has a very weak connection, which can be seen as an occasional contact with
-        the other node. Dijkstra Algorithm is a <b>virus spreading</b> between those individuals. It's an algorithm to find the shortest path between two nodes. Starting from "A" the virus tries to reach "Z" using the shortest path possible. This means
-        that the virus is more prone to follow paths (connections) with the smallest value, or the strongest contact in real life. The connection value also represents the ETA of the process: every unit is a day.
+        It consists of visualizing a population of susceptible individuals using an undirected graph. In the example above the individuals are represented with the alphabet letters and every individual is a <b>node</b>, where the starting node "A" is
+        the patient zero and "Z" is the "target". There is a target because the simulation is based on the Dijkstra Algorithm: every node has at least an edge (or link, connection) with another node and this connection has a value ranging from 1 to 5.
+        Value of 1 represents the strongest connection, where an individual has strong, periodic, contacts with the other individual. Value of 5 is the lowest value, the individual has a very weak connection, which can be seen as an occasional contact
+        with the other node. Dijkstra Algorithm is a <b>virus spreading</b> between those individuals. It's an algorithm to find the shortest path between two nodes. Starting from "A" the virus tries to reach "Z" using the shortest path possible. This
+        means that the virus is more prone to follow paths (connections) with the smallest value, or the strongest contact in real life. The connection value also represents the ETA of the process: every unit is a day.
     </p>
 
     <p id="lastquote">
@@ -81,9 +83,9 @@
     <img src="./data/sample.png">
 
     <p>
-        As you can see, even if it's not possible to view the full object, the Dijkstra Algorithm found the shortest path from A to Z (check http://localhost:8080/[PLOT]social-net.json). The sum of the paths is the ETA of the virus spreading. It took 25 days
-        to infect all nodes that you see at the bottom. The connections are randomly generated and the starting node can't be directly connected with the last one. You can modify the value of the maximum connections for each node. More connections means
-        a higher possibility that the shortest path will be really short. If you actually modify the range of values for the connections, say from 4 to 5 instead of 1 to 5, you will see that it will take the "virus" a longer time to reach the target.
+        As you can see, even if it's not possible to view the full object, the Dijkstra Algorithm found the shortest path from A to Z. The sum of the paths is the ETA of the virus spreading. It took 25 days to infect all nodes that you see at the bottom. The
+        connections are randomly generated and the starting node can't be directly connected with the last one. You can modify the value of the maximum connections for each node. More connections means a higher possibility that the shortest path will
+        be really short. If you actually modify the range of values for the connections, say from 4 to 5 instead of 1 to 5, you will see that it will take the "virus" a longer time to reach the target.
     </p>
 
     <p>
@@ -91,14 +93,23 @@
         of the public one).
     </p>
 
-    <h2 style="font-size: 30px;">Useful paths</h2>
+    <h2 style="font-size: 30px;">Useful links</h2>
 
     <div class="container">
-        <a class="links" href="/results">Simulation results chart</a>
+        <a class="links" href="/upload">Custom data plotting</a>
     </div>
 
     <div class="container">
-        <a class="links" href="/[PLOT]social-net.json"> Raw JSON data</a>
+        <a class="links" href="/charts/results.html">Simulation results chart</a>
+    </div>
+
+    <div class="container">
+        <a class="links" href="/data/[PLOT]social-net.json">Raw JSON data</a>
+    </div>
+
+
+    <div class="container">
+        <a class="links" href="https://github.com/f0lg0/ThePandemicHack">GitHub repo</a>
     </div>
 
 

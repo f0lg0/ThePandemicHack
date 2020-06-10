@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Custom Data</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.0/milligram.css
+    ">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+
+    <style>
+        .links line {
+            stroke: #aaa;
+        }
+        
+        .nodes circle {
+            pointer-events: all;
+            stroke: none;
+            stroke-width: 40px;
+            fill: black;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1 style="font-size: 50px; text-align: center;">Plot custom data.</h1>
+    <p style="text-align: center; margin-top: 1px; margin-bottom: 1px;">select a valid JSON file</p>
+
+
+    <svg style="border:1px solid #EAEAEA; display: block; margin: auto;" width="960" height="600"></svg>
+    <div id="error"></div>
+
+
+    <div class="container">
+        <input style="margin-left: 65px; margin-top: 10px;" id="Select" type="file" value="Import"><br>
+
+        <button class="button-black" id="import">Import</button>
+        <button class="button-black button-outline" id="clear" onclick="clearElement(svg)">Clear</button><br>
+    </div>
+
+
+    <script src="custom-plot.js"></script>
+
+    <script>
+        let plotted = false;
+        let svg = d3.select("svg");
+        let err_div = document.getElementById("error");
+        let err_msg = document.createElement("P");
+        // let invalid_json = document.createElement("P");
+
+
+        document.getElementById('import').onclick = function() {
+            let files = document.getElementById('Select').files;
+
+            if (files.length <= 0) {
+                return false;
+            } else if (files[0].type != "application/json") {
+                console.error("Selected file is not a JSON file.");
+
+                err_msg.innerHTML = "Selected file is not a JSON file.";
+                err_msg.style.color = "#E00";
+                err_msg.style.textAlign = "center";
+                err_div.appendChild(err_msg);
+                return false;
+            } else if (err_msg.innerHTML != "") {
+                err_div.removeChild(err_msg);
+            }
+
+            const fr = new FileReader();
+
+            fr.onload = function(e) {
+                let result = JSON.parse(e.target.result);
+
+                if (result.nodes && result.links) {
+                    if (plotted) {
+                        clearElement(svg);
+                    }
+                    plot(result);
+                    plotted = true;
+                    err_msg.innerHTML = "";
+                } else {
+                    console.error("JSON file is not valid, there aren't the nodes and links fields.");
+
+                    err_msg.innerHTML = "JSON file is not valid.";
+                    err_msg.style.color = "#E00";
+                    err_msg.style.textAlign = "center";
+                    err_div.appendChild(err_msg);
+                }
+
+
+            }
+
+            fr.readAsText(files.item(0));
+        };
+    </script>
+
+</body>
+
+</html>
