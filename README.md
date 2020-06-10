@@ -100,6 +100,8 @@ Note that the visualization on the landing page is pretty simple. Nothing really
 
 The simulation also generates a result.csv file where you will find all the results from all the simulations you run, it consits of the shortes path and the total distance.. It is plotted at http://localhost/results using chart.js!
 
+If you want to visualize your own file generated with this app then visit http://localhost:8080/upload
+
 ### Notes
 
 The landing page is <b>optimized for "half window" reading</b>.
